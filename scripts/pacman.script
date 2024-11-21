@@ -1,0 +1,41 @@
+local movement = require "scripts.modules.movement"
+
+function init(self)
+	self.dir = vmath.vector3()
+	self.speed = 2000
+	msg.post(".", "acquire_input_focus")
+end
+
+function update(self, dt)
+	local max_move = 5
+	local projected_position = self.dir * self.speed * dt
+	local new_position = movement:restrict_move(max_move, projected_position)
+	go.set_position(go.get_position() + new_position)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("contact_point_response") then
+		if message.other_group == hash("wall") then
+			local newpos = go.get_position() + message.normal * message.distance
+			go.set_position(newpos)
+			self.dir = vmath.vector3()
+		end
+	end
+end
+
+function on_input(self, action_id, action)
+	if action_id == hash("down") then
+		self.dir = vmath.vector3()
+		self.dir.y = -1
+	elseif action_id == hash("up") then
+		self.dir = vmath.vector3()
+		self.dir.y = 1
+	elseif action_id == hash("left") then
+		self.dir = vmath.vector3()
+		self.dir.x = -1
+	elseif action_id == hash("right") then
+		self.dir = vmath.vector3()
+		self.dir.x = 1
+	end
+
+end

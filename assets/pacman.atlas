@@ -1,0 +1,40 @@
+images {
+  image: "/assets/pac man/clear.png"
+}
+images {
+  image: "/assets/pac man/enter.png"
+}
+images {
+  image: "/assets/pac man/game over.png"
+}
+images {
+  image: "/assets/pac man/pac man death.png"
+}
+images {
+  image: "/assets/pac man/pac man life counter.png"
+}
+images {
+  image: "/assets/pac man/pac man movement.png"
+}
+images {
+  image: "/assets/pac man/pill.png"
+}
+images {
+  image: "/assets/pac man/power pill.png"
+}
+images {
+  image: "/assets/pac man/ready.png"
+}
+images {
+  image: "/assets/pac man/spr cherry.png"
+}
+images {
+  image: "/assets/pac man/tiles set.png"
+}
+images {
+  image: "/assets/pac man/ghost/blue ghost/spr_ghost_blue_0.png"
+}
+images {
+  image: "/assets/pac man/ghost/blue ghost/spr_ghost_blue_1.png"
+}
+extrude_borders: 2
