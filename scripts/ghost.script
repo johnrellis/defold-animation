@@ -1,7 +1,7 @@
 local movement = require "scripts.modules.movement"
 
 function init(self)
-	self.dir = vmath.vector3(1,0,0)
+	self.dir = vmath.vector3(0,0,0)
 	self.speed = 200
 	self.correction = vmath.vector3()
 end
